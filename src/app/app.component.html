@@ -1,0 +1,62 @@
+<div class="container py-5">
+
+    <div class="form-group">
+      <label for="nameInput">Applicant Name</label>
+      <input type="text" class="form-control" [formControl]="nameInput" />
+    </div>
+    <div class="form-group">
+      <label for="idInput">ID Number</label>
+      <input type="number" class="form-control" [formControl]="idInput" />
+    </div>
+    <div class="form-group">
+      <label for="dobInput">Birth Date</label>
+      <input type="date" class="form-control" [formControl]="dobInput" />
+    </div>
+    <div class="form-group">
+      <label for="contactInput">Contact Address</label>
+      <input type="text" class="form-control" [formControl]="contactInput" />
+    </div>
+    <div class="form-group">
+      <label for="phoneInput">Contact Phone</label>
+      <input type="tel" class="form-control" [formControl]="phoneInput" />
+    </div>
+    <div class="form-group">
+      <label for="emailInput">Contact Email</label>
+      <input type="email" class="form-control" [formControl]="emailInput" />
+    </div>
+    <div class="form-group">
+      <label for="expInput"
+        >Describe your previous experience about Food & Beverage business</label
+      >
+      <textarea class="form-control" [formControl]="expInput" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="intrInput">Describe your interest about our brand</label>
+      <textarea class="form-control" [formControl]="intrInput" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="investInput">Planned investment amount in USD</label>
+      <input type="number" class="form-control" [formControl]="investInput" />
+    </div>
+    <div class="form-group">
+      <label for="geoInput"
+        >In which geographical areas would you like to operate</label
+      >
+      <input type="text" class="form-control" [formControl]="geoInput" />
+    </div>
+    <div class="form-group">
+      <label for="notesInput">Additional Notes</label>
+      <textarea class="form-control" [formControl]="notesInput" rows="3"></textarea>
+    </div>
+    <div class='pt-3'></div>
+    <button (click)="postReq()" type="submit" class="btn btn-primary">Submit</button>
+
+    <h4 class="pt-5 pb-3">Previous Applicants:</h4>
+    <div class="row">
+      <div *ngFor='let item of forms$' class="col-sm-3">
+        {{item.firstName}}
+      </div>
+    </div>
+
+</div>
+
